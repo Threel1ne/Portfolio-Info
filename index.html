@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Awesome Homepage</title>
+    <link rel="stylesheet" href="index-css.css">
+    <link rel="shortcut icon" href="Threelines Logo.jpg" type="image/x-icon">
+  </head>
+  <body>
+    <header>
+      <h1>Tharathep Luangsilp's Info</h1>
+    </header>
+    
+    <section id="hero">
+      <h2>Welcome to Tharathep's Info</h2>
+    </section>
+    
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Hello, my name is Tharathep Luangsilp. Nickname is Non. My favorite four is blue.<br>In my free time I like programming</p>
+      <a href="https://threel1ne.github.io/Portfolio-M1" target="_blank" style="text-decoration: none;">Click to see my certificate card</a>
+    </section>
+    
+    <section id="services">
+      <h2>Our Services</h2>
+      <ul>
+        <li>Robotics</li>
+        <li>Website</li>
+        <li>Programing</li>
+      </ul>
+    </section>
+    
+    
+    <footer>
+      <p>&copy; 2023 My Awesome Homepage</p>
+    </footer>
+  </body>
+  <script>
+    // Get all nav links
+const navLinks = document.querySelectorAll('nav ul li a');
+
+// Loop through each nav link and add an event listener for click events
+navLinks.forEach(link => {
+  link.addEventListener('click', event => {
+    // Prevent default link behavior
+    event.preventDefault();
+
+    // Get the ID of the target section (the href attribute value of the link)
+    const targetId = link.getAttribute('href');
+
+    // Get the target section
+    const targetSection = document.querySelector(targetId);
+
+    // Scroll to the target section
+    targetSection.scrollIntoView({
+      behavior: 'smooth'
+    });
+
+    // Remove the "active" class from all nav links
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+    });
+
+    // Add the "active" class to the clicked link
+    link.classList.add('active');
+  });
+});
+
+  </script>
+  
+</html>
